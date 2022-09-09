@@ -24,13 +24,13 @@ import plotly.express as px
 
 # Preview the data
 event_details
-event_details.info()
-event_details.describe()
+event_details.info() #The .info() method prints a summary of a DataFrame. For each column, you can find its name, data type, and the number of non-null rows.
+event_details.describe() #The .describe() method returns helpful descriptive statistics for your data, excluding null values.
 
 # Create a boxplot of total sales by event category
 fig = px.box(event_details, x="category_group", y="total_sales")
 fig.show()
 
 # Create a scatter plot of total sold versus total sales
-fig = px.scatter(event_details, x="total_sold", y="total_sales", hover_data=["event_name"])
+fig = px.scatter(event_details, x="total_sold", y="total_sales", hover_data=["event_name"]) #Scatter plots are a great way to visualize the relationship between two (or more) numeric variables.
 fig.show()
